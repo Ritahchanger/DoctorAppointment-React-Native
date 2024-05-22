@@ -1,14 +1,24 @@
 import { View, Text, StyleSheet, Image } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 
-const Splash = () => {
+const  Splash = ({navigation}) => {
+
+  useEffect(()=>{
+
+    setTimeout(()=>{
+        navigation.navigate('Home')
+    },3000)
+    
+  },[])
+
+
   return (
     <View style={styles.container}>
-      <Text>Denno Hospital</Text>
       <Image
         source={require('../../assets/images/hospital.png')}
         style={styles.logo}
       />
+       <Text style={styles.title}>Denno Hospital</Text>
     </View>
   )
 }
@@ -26,5 +36,10 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     tintColor: '#fff'
+  }
+  ,title:{
+    color:'#fff',
+    fontWeight:'800',
+    marginTop:'20',
   }
 })

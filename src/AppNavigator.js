@@ -5,6 +5,8 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 import Splash from './screens/Splash'
 
+import Home from './screens/Home'
+
 const Stack = createStackNavigator()
 
 const AppNavigator = () => {
@@ -14,6 +16,11 @@ const AppNavigator = () => {
         <Stack.Screen
           component={Splash}
           name='Splash'
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          component={Home}
+          name='Home'
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
